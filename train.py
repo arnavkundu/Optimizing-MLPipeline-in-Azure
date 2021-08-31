@@ -2,7 +2,7 @@ from sklearn.linear_model import LogisticRegression
 import argparse
 import os
 import numpy as np
-from sklearn.metrics import mean_squared_error, roc_auc_curve
+from sklearn.metrics import mean_squared_error, roc_auc_score
 import joblib
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import OneHotEncoder
