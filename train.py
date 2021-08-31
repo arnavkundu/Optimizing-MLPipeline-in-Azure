@@ -69,6 +69,12 @@ def main():
 
     accuracy = model.score(x_test, y_test)
     run.log("Accuracy", np.float(accuracy))
+    
+    y_pred = model.predict_proba(x_test)
+    roc_weighted = roc_auc_score(y_test, y_pred, average='weighted')
+    run.log("ROC_Weighted", np.float(roc_weighted))
+    
+    
     os.makedirs('./outputs', exist_ok=True)
     joblib.dump(value=model,filename='./outputs/model.joblib')
 
