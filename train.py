@@ -2,7 +2,7 @@ from sklearn.linear_model import LogisticRegression
 import argparse
 import os
 import numpy as np
-from sklearn.metrics import mean_squared_error
+from sklearn.metrics import mean_squared_error, roc_auc_curve
 import joblib
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import OneHotEncoder
@@ -71,7 +71,7 @@ def main():
     run.log("Accuracy", np.float(accuracy))
     
     y_pred = model.predict_proba(x_test)
-    roc_weighted = roc_auc_score(y_test, y_pred, average='weighted')
+    roc_weighted = roc_auc_score(y_test, y_pred[:,1], average='weighted')
     run.log("ROC_Weighted", np.float(roc_weighted))
     
     
