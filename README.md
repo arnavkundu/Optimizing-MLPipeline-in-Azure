@@ -23,7 +23,18 @@ The **best** performing model from the **Hyperdrive** methodology [Run ID: HD_e3
 ## Scikit-learn Pipeline
 **Explain the pipeline architecture, including data, hyperparameter tuning, and classification algorithm.**
 
+In architecturing the pipeline for the logistic regression using **Hyperdrive**, we have used the data from the mentioned csv file in the location: [https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv] and cleaned up the data so that it is ready to be ingested as a easily consumable data. the cleaning of data included various steps like encoding some month numbers, so that only numbers are fed into the system instead of text, using encoding to make the categorization as well and finally return the dataframe on which the Logistic Regression model will run. We would use 2 hyper parameters to run a *RandomParameterSampling*. The hyperparameters are:
+
+- **C**: Range of [0.001, 0.01, 0.1, 1, 10, 50, 100, 150, 200, 300, 400, 500, 1000]
+- **max_iter**: Range of [50, 100, 150, 200, 300]
+
+The reason of using *RandomParameterSampling* is that this method helps in terminating any low-performance runs early. We could have used *GridParameterSampling* or *BayesianParameterSampling* to perform exhaustive search over the values provided or exploring the hyperparameter space respectively. But since time was a constraint on the VM, I preferred to use the *RandomParameterSampling* as this led to faster execution of the code.
+
+The classification algorithm used was **Logistic regression** where the target variable was **y** and was assigned 1 for a **YES** and 0 for a **NO**.
+
 **What are the benefits of the parameter sampler you chose?**
+- **C**: This is a regularization parameter that enables training of models that is able to generalize better on unseen data. 
+- **max_iter**: This is the maximum number of iterations that can be taken for the solvers to converge.
 
 **What are the benefits of the early stopping policy you chose?**
 
