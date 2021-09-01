@@ -65,19 +65,28 @@ The configurations in the AutoML has been given the following parameters to buil
 
 The reason as to why we went for AUC score is because of the highly imbalanced dataset we had.
 
-**Evaluation metric from best model of AutoML**
+**_Evaluation metric from best model of AutoML_**: 
 ![image](https://user-images.githubusercontent.com/38326274/131704557-58b24f04-7aca-48af-aa1f-63ba347b405c.png)
 
-**Evaluation metric from best model of Hyperdrive**
+**_Evaluation metric from best model of Hyperdrive_**:
 ![image](https://user-images.githubusercontent.com/38326274/131704663-bf5eee58-289e-4e95-a80b-a8389a8829f2.png)
 
-**AutoML showing the high imbalance in the dataset**
+**_AutoML showing the high imbalance in the dataset_**:
 ![image](https://user-images.githubusercontent.com/38326274/131704718-47cb6862-80c4-4d0b-a0d5-5471dfa6b1ae.png)
 
-**Feature importance as a by-product of model explanation
+**_Feature importance as a by-product of model explanation_**:
 ![image](https://user-images.githubusercontent.com/38326274/131704905-dc9f116d-7253-42c8-8aab-70bf6b4c4bb1.png)
 
 
 ## Future work
 **What are some areas of improvement for future experiments? Why might these improvements help the model?**
 
+1. **Class Imbalance**
+    
+    In future experiments I would like to explore the following ideas to enable better prediction on the dataset so that we improve on the AUC as well as the   accuracy in a holistic way
+    - Using techniques like SMOTE to oversample the data making sure that we don't bias the data.
+    - Using undersampling techniques to reduce the imbalance by some %
+    - Understanding other metrics to look into the aspect of evaluating the model.
+
+2. **Feature Engineering**
+    Understand different features can can be derived from the pool of features which might be able to explain the model even better. Synthesizing of the such features will make the explanability even richer. However this might increase the computation time and elevate expenses and thus a trade-off needs to be done so that we can prove the benefit of the extra computation time.
