@@ -7,6 +7,7 @@
    * [AutoML](#AutoML)
    * [Pipeline comparison](#Pipeline-comparison)
    * [Future work](#Future-work)
+   * [Proof of Cluster Clean Up](#Proof-of-Cluster-Clean-Up)
 
 ## Overview
 This project is part of the Udacity Azure ML Nanodegree.
@@ -83,10 +84,18 @@ The reason as to why we went for AUC score is because of the highly imbalanced d
 
 1. **Class Imbalance**
     
+    ![image](https://user-images.githubusercontent.com/38326274/131716992-b22073ef-9057-417b-8b3b-6069b1bd4aaa.png)
+
     In future experiments I would like to explore the following ideas to enable better prediction on the dataset so that we improve on the AUC as well as the   accuracy in a holistic way
-    - Using techniques like SMOTE to oversample the data making sure that we don't bias the data.
-    - Using undersampling techniques to reduce the imbalance by some %
-    - Understanding other metrics to look into the aspect of evaluating the model.
+    - Using techniques like SMOTE to oversample the data making sure that we don't bias the data: Using SMOTE, we will be generating synthetic samples for the minority class and using the k-NN based oversampling, we can create some synthetic data points in the close vicinity of other data points so that we attain a class balance.
+    - Using undersampling techniques like NearMiss to reduce the imbalance. This helps in improving the model by removing some sample points from the majority class so as to increase the gaps between 2 classes. Near-neighbour method also takes care of lesser information loss during undersampling. 
+    - Understanding other metrics to look into the aspect of evaluating the model like Precision, Recall F1 score and also understand if precision is of more importance or recall and try to focus our model's development. This will enable us to be closer to the business case solving hence improving adaptibility by business.
 
 2. **Feature Engineering**
     Understand different features can can be derived from the pool of features which might be able to explain the model even better. Synthesizing of the such features will make the explanability even richer. However this might increase the computation time and elevate expenses and thus a trade-off needs to be done so that we can prove the benefit of the extra computation time.
+    
+    
+## Proof of Cluster Clean Up
+
+![image](https://user-images.githubusercontent.com/38326274/131718131-d6f5287e-cba5-4629-a533-53d4a14445ba.png)
+
