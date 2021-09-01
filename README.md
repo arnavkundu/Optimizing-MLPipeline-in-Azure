@@ -38,9 +38,8 @@ The classification algorithm used was **Logistic regression** where the target v
 
 **What are the benefits of the early stopping policy you chose?**
 
-```
-> policy = BanditPolicy(evaluation_interval=1, slack_factor=0.1)
-```
+Syntax: > policy = BanditPolicy(evaluation_interval=1, slack_factor=0.1)
+
 
 Early stopping policy was chosen so that any run whch is performing poorly can automatically terminate thus improving the computational efficiency and make sure that resources utilized are at optimum level. For this a *BanditPolicy* was chosen and 2 parameters were passed because of the below mentioned benefits.
 
