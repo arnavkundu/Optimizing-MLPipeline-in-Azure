@@ -7,17 +7,18 @@
    * [AutoML](#AutoML)
    * [Pipeline comparison](#Pipeline-comparison)
    * [Future work](#Future-work)
-   * [Proof of cluster clean up](#Proof-of-cluster-clean-up)
 
 ## Overview
 This project is part of the Udacity Azure ML Nanodegree.
 In this project, we build and optimize an Azure ML pipeline using the Python SDK and a provided Scikit-learn model.
-This model is then compared to an Azure AutoML run.
+This model is then compared to an Azure AutoML run. The architecture of how the process flow happens in the project is as follows:
+
+![image](https://user-images.githubusercontent.com/38326274/131691821-42e40199-2c72-45ae-8be6-8a4e503e3955.png)
 
 ## Summary
-**In 1-2 sentences, explain the problem statement: e.g "This dataset contains data about... we seek to predict..."**
+The problem statement consist of data from a Marketing sector of a bank where there are various features that are captured as a part of the exercise and contains labels that **Categorizes** whether a customer agrees to a certain marketing proposal. Our goal here is to not only to correctly classify the agreement of the marketing proposal but also make sure that we look into the true positive rate (recall) and false positive rate for the same. Hence, we see that we not only look at the accuracy, but also at the AUC-ROC curve that tries to perform a trade off between true positive rate (recall) and false positive rate.
 
-**In 1-2 sentences, explain the solution: e.g. "The best performing model was a ..."**
+The **best** performing model from the **Hyperdrive** methodology [Run ID: HD_e354b747-f90c-4124-a95b-40a1e6c38010] is the one with 0.916 **accuracy** and AUC-ROC score of **0.933**. On the other hand the **best** performing model using the **AutoML** methodology [Run ID: AutoML_b8a1f7b2-b6de-40eb-b7c0-7d90d727ded4_30] is the one with 0.916 **accuracy** and AUC-ROC score of **0.95**
 
 ## Scikit-learn Pipeline
 **Explain the pipeline architecture, including data, hyperparameter tuning, and classification algorithm.**
@@ -35,6 +36,3 @@ This model is then compared to an Azure AutoML run.
 ## Future work
 **What are some areas of improvement for future experiments? Why might these improvements help the model?**
 
-## Proof of cluster clean up
-**If you did not delete your compute cluster in the code, please complete this section. Otherwise, delete this section.**
-**Image of cluster marked for deletion**
